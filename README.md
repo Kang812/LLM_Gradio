@@ -1,12 +1,12 @@
 # LLM_Gradio
 ## install package
-gradio
+gradio 3.41.2
 <br>
-pytorch 1.8.1
+pytorch 2.0.1
 <br>
-transformers
+transformers 4.33.2
 <br>
-peft
+peft==0.5.0
 
 ## web application 실행
 ```
