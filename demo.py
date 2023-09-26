@@ -3,7 +3,7 @@ import torch
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel, PeftConfig
 
-model_path = "/mnt/e/llm/chatgpt_make/work_dir2/checkpoint-15837"
+model_path = "./work_dir2/checkpoint-15837"
 config = PeftConfig.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path)
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
