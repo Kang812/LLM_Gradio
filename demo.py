@@ -3,7 +3,7 @@ import torch
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel, PeftConfig
 
-model_path = "/workspace/llm/chatgpt_make/work_dir/checkpoint-168912"
+model_path = "/mnt/e/llm/chatgpt_make/work_dir2/checkpoint-15837"
 config = PeftConfig.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path)
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
@@ -15,30 +15,34 @@ pipe = pipeline(
     "text-generation",
     model=inference_model,
     tokenizer=tokenizer,
-    device=1,
+    device=0,
     torch_dtype=torch.bfloat16
 )
 
 def build_prompt(history):
     conv_list = []
     for user_msg, bot_msg in history: # [[user1, bot1], [user2, bot2], ..., [user10, None]]
+
         user_turn = f"### User\n{user_msg}"
         conv_list.append(user_turn)
 
         bot_turn = f"### Bot\n{bot_msg if bot_msg is not None else ''}"
         conv_list.append(bot_turn)
     prompt = "\n\n".join(conv_list)
+
     print("*")
     print(prompt)
-    print("*")      
+    print("*")
+            
     return prompt
+
 
 def ask(history):
     result = pipe(build_prompt(history),
                    return_full_text=False,
                    do_sample=True,
-                   top_p=0.4,
-                   repetition_penalty=1.3,
+                   top_p=0.3,
+                   repetition_penalty=1.2,
                    max_new_tokens=256,
                    )
     return result[0]['generated_text'].split("\n\n")[0]
@@ -68,4 +72,4 @@ with gr.Blocks() as demo:
     )
     clear.click(lambda: None, None, chatbot, queue=False)
 
-demo.launch(server_name="0.0.0.0", server_port=11075)
+demo.launch(server_name="0.0.0.0", server_port=11075, share=True)
