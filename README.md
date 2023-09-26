@@ -8,6 +8,7 @@ transformers
 <br>
 peft
 
-"""
+## web application 실행
+```
 python demo.py
-"""
+```
