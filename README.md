@@ -7,3 +7,7 @@ pytorch 1.8.1
 transformers
 <br>
 peft
+
+"""
+python demo.py
+"""
