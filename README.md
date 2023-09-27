@@ -2,7 +2,7 @@
 ## install package
 pip install gradio==3.41.2
 <br>
-pip install torch torchvision torchaudio #2.0.l
+pip install torch torchvision torchaudio #2.0.1
 <br>
 pip install transformers==4.33.2
 <br>
