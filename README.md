@@ -13,4 +13,4 @@ pip install peft==0.5.0
 python demo.py
 ```
 ## colab
-- [Graido를 사용한 inference](https://colab.research.google.com/drive/1K8HIRgFunydUz4W2n8pVrZb3RK8a-W7V#scrollTo=hrQ7oek9NLTS)
+- [Graido를 사용한 inference 1.3B 모델](https://colab.research.google.com/drive/1K8HIRgFunydUz4W2n8pVrZb3RK8a-W7V#scrollTo=hrQ7oek9NLTS)
