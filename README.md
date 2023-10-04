@@ -12,5 +12,5 @@ pip install peft==0.5.0
 ```
 python demo.py
 ```
-## colav
+## colab
 - [링크](https://colab.research.google.com/drive/1K8HIRgFunydUz4W2n8pVrZb3RK8a-W7V#scrollTo=hrQ7oek9NLTS)
