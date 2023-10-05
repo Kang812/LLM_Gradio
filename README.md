@@ -9,6 +9,7 @@ pip install transformers==4.33.2
 pip install peft==0.5.0
 
 ## web application 실행
+- model_path = "./work_dir2/checkpoint-15837" 부분을 다운 받은 모델 경로로 수정후 demo.py 실행
 ```
 python demo.py
 ```
